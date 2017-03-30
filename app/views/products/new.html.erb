@@ -1,0 +1,10 @@
+<h1>Add Product</h1>
+<%= form_for @product do |f| %>
+  <%= f.label :title %></br>
+  <%= f.text_field :title %></br>
+  <%= f.label :price, "Price (CNY/cents)" %></br>
+  <%= f.text_field :price %> </br>
+  <%= f.label :stock %></br>
+  <%= f.text_field :stock %> </br>    
+  <%= f.submit %></br>
+<% end %>  

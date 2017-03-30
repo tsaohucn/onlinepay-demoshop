@@ -1,0 +1,4 @@
+<h1>Payment Page</h1>
+<p>Your bill-id <%= @checkout[:id] %> with total cost <%= @checkout[:cost] %> (CNY/cents) has been checked out, please use Onlinepay for payment</p>   
+<br>
+<%= button_to "Use Onlinepay for payment", cart_onlinepay_path(@checkout) %>
