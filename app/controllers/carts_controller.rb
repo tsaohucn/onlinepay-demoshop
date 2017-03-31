@@ -16,6 +16,7 @@ class CartsController < ApplicationController
       @checkout = { id: rand(1000000), cost: total_cost }
       Cart.all.destroy_all
     else
+      flash[:waring] = "your cart is empty"
       redirect_to products_path
     end
   end
