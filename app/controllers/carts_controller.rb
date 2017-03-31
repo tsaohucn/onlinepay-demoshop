@@ -11,8 +11,13 @@ class CartsController < ApplicationController
   end
 
   def checkout
-    @checkout = { id: rand(1000000), cost: Cart.total_cost }
-    Cart.all.destroy_all
+    total_cost = Cart.total_cost
+    if total_cost > 0
+      @checkout = { id: rand(1000000), cost: total_cost }
+      Cart.all.destroy_all
+    else
+      redirect_to products_path
+    end
   end
 
   def onlinepay
